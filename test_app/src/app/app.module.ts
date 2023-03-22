@@ -11,6 +11,7 @@ import { FiltersComponent } from './components/filters/filters.component';
 import { FilterPipe } from './shared/pipes/filter.pipe';
 
 import { NgOptimizedImage } from '@angular/common'
+import { ScrollingModule } from '@angular/cdk/scrolling';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { NgOptimizedImage } from '@angular/common'
   imports: [
     BrowserModule,
     NgOptimizedImage,
+    ScrollingModule,
     FormsModule
   ],
   providers: [],

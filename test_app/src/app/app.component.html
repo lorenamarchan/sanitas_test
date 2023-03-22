@@ -1,6 +1,6 @@
 <main>
   <app-filters></app-filters>
-  <section class="flex">
-    <app-card *ngFor="let card of cards | filter:filterArguments; let i = index" [data]="card" [priority]="i<10"></app-card>
-  </section>
+    <section class="flex">
+      <app-card  *ngFor="let card of cards | filter:filterArguments; let i = index" [data]="card" [priority]="i<10"></app-card>
+    </section>
 </main>

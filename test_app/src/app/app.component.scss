@@ -7,10 +7,13 @@ main {
     min-width:36em;
 }
 .flex {
-    padding: $space-lg 0;
     display: flex;
+    padding: $space-lg 0;
     flex-wrap: wrap;
     gap: $space-lg;
     justify-content: center;
     height: 100%;
+}
+.virtual-scroll {
+    height: 100vh;
 }
