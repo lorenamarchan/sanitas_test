@@ -1,0 +1,10 @@
+@import '../../../assets/scss/variables.scss';
+
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $space-md;
+    border-bottom: $border-sm;
+    padding: $space-md 0;
+
+}

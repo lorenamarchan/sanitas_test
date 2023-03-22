@@ -1,0 +1,22 @@
+@import '../../../../assets/scss/variables.scss';
+
+.input {
+    border: none;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: $space-sm;
+    padding: 0;
+    &__label {
+        color: $gray-75;
+    }
+    &__field {
+        padding: $space-xs $space-sm;
+        border-radius: $radius-sm;
+        border: $border-sm;
+        transition: border-color .1s;
+        &:hover {
+            border-color: $color-border-hover;
+        }
+    }
+}

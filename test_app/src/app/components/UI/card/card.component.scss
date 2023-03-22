@@ -1,0 +1,27 @@
+@import '../../../../assets/scss/variables.scss';
+
+.card {
+    box-shadow: $shadow-sm;
+    border-radius: $radius-md;
+    padding: $space-md;
+    &__photo {
+        height: 500px;
+        width: 500px;
+        display: block;
+        background: $color-empty-block;
+    }
+    &__info {
+        margin: $space-sm 0 0;
+        &__item {
+            margin: 0;
+            font-size: $font-size-sm;
+            line-height: 1.5;
+            color: $color-text;
+            &--main {
+                @extend .card__info__item;
+                font-size: $font-size-md;
+                color: $color-main-text;
+            }
+        }
+    }
+}

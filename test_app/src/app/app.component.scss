@@ -1,0 +1,16 @@
+@import '../assets/scss/variables.scss';
+
+main {
+    min-height: 100%;
+    padding: $space-lg;
+    font-family: Arial, Helvetica, sans-serif;
+    min-width:36em;
+}
+.flex {
+    padding: $space-lg 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: $space-lg;
+    justify-content: center;
+    height: 100%;
+}

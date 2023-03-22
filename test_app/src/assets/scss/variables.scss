@@ -1,0 +1,35 @@
+/* COLORS*/
+$gray-25: #f9f9f9;
+$gray-50: #CCCCCC;
+$gray-75: #666666;
+$gray-100: #000000;
+
+$color-empty-block: $gray-25;
+$color-lines: $gray-50;
+$color-text: $gray-75;
+$color-main-text: $gray-100;
+$color-border: $gray-50;
+$color-border-hover: $gray-100;
+$color-shadow: rgba($gray-100, .1);
+
+
+/* SPACES */
+$space-xs: 0.5em;
+$space-sm: 1em;
+$space-md: 2em;
+$space-lg: 4em;
+
+/* BORDER */
+$border-sm: solid 1px $color-border;
+
+/* RADIUS */
+$radius-sm: 4px;
+$radius-md: 16px;
+
+/* FONT-SIZES */
+$font-size-sm: 1em;
+$font-size-md: 1.4em;
+
+// SHADOW
+$shadow-sm: 0 0 1em $color-shadow;
+
