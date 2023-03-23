@@ -1,9 +1,9 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core'
+import { ChangeDetectionStrategy, Component, OnInit, ViewChild } from '@angular/core'
 import { generateSlug } from "random-word-slugs"
 import { Card } from './shared/models/card'
 import { Filter } from './shared/models/filter'
 import { FiltersService } from './shared/services/filters.service'
-import { PageEvent } from '@angular/material/paginator'
+import { MatPaginator, PageEvent } from '@angular/material/paginator'
 import { FilterPipe } from './shared/pipes/filter.pipe'
 
 @Component({
@@ -14,7 +14,10 @@ import { FilterPipe } from './shared/pipes/filter.pipe'
 })
 
 export class AppComponent implements OnInit {
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+
   constructor(private filtersService: FiltersService, private filterPipe: FilterPipe) { }
+  
 
   title = 'test_app'
 
@@ -61,8 +64,8 @@ export class AppComponent implements OnInit {
 
   filterCards(filtersArguments: Filter): void {
     this.filteredCards = this.filterPipe.transform(this.cards, filtersArguments)
-    this.paginationArguments.page = 0
     this.paginationArguments.size = this.filteredCards.length
+    this.paginator?.firstPage()
   }
 
 }
