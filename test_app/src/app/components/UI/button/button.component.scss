@@ -13,6 +13,7 @@ $color-button--hover: $indigo-75;
     cursor: pointer;
     transition: background-color .1s;
     line-height: .9em;
+
     &:hover {
         background-color: $color-button--hover;
     }

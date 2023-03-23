@@ -7,9 +7,9 @@ describe('InputComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ InputComponent ]
+      declarations: [InputComponent]
     })
-    .compileComponents()
+      .compileComponents()
 
     fixture = TestBed.createComponent(InputComponent)
     component = fixture.componentInstance
@@ -38,7 +38,7 @@ describe('InputComponent', () => {
     const inputText = 'text'
     const compiled = fixture.nativeElement as HTMLElement
     const input = compiled.querySelector('.input__field') as HTMLInputElement
-    
+
     input.value = inputText
     input.dispatchEvent(new Event('input'))
     expect(component.model.emit).toHaveBeenCalledWith(inputText)

@@ -1,10 +1,10 @@
-import { ChangeDetectionStrategy, Component, OnInit, ViewChild } from '@angular/core';
-import { generateSlug } from "random-word-slugs";
-import { Card } from './shared/models/card';
-import { Filter } from './shared/models/filter';
-import { FiltersService } from './shared/services/filters.service';
-import { PageEvent } from '@angular/material/paginator';
-import {FilterPipe}from './shared/pipes/filter.pipe'
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core'
+import { generateSlug } from "random-word-slugs"
+import { Card } from './shared/models/card'
+import { Filter } from './shared/models/filter'
+import { FiltersService } from './shared/services/filters.service'
+import { PageEvent } from '@angular/material/paginator'
+import { FilterPipe } from './shared/pipes/filter.pipe'
 
 @Component({
   selector: 'app-root',
@@ -14,7 +14,7 @@ import {FilterPipe}from './shared/pipes/filter.pipe'
 })
 
 export class AppComponent implements OnInit {
-  constructor(private filtersService: FiltersService, private filterPipe: FilterPipe) {}
+  constructor(private filtersService: FiltersService, private filterPipe: FilterPipe) { }
 
   title = 'test_app'
 
@@ -28,15 +28,15 @@ export class AppComponent implements OnInit {
   }
 
   // MatPaginator
-  pageSizeOptions = [250, 500, 1000, 2000, 4000];
-  pageEvent!: PageEvent;
+  pageSizeOptions = [250, 500, 1000, 2000, 4000]
+  pageEvent!: PageEvent
 
-  ngOnInit(){
-    for(let i = 1; i <= this.nCards; i++){
+  ngOnInit() {
+    for (let i = 1; i <= this.nCards; i++) {
       this.cards.push({
-          id: i.toString(),
-          photo: `https://picsum.photos/id/${i}/500/500`,
-          text: this.setRandomText('photo_')
+        id: i.toString(),
+        photo: `https://picsum.photos/id/${i}/500/500`,
+        text: this.setRandomText('photo_')
       })
     }
 
@@ -50,11 +50,11 @@ export class AppComponent implements OnInit {
     return prefix + generateSlug(4, { format: "kebab" }).replace(/-/g, '_')
   }
 
-  setPageSizeOptions(setPageSizeOptionsInput: string):void {
-    this.pageSizeOptions = setPageSizeOptionsInput.split(',').map(str => +str);
+  setPageSizeOptions(setPageSizeOptionsInput: string): void {
+    this.pageSizeOptions = setPageSizeOptionsInput.split(',').map(str => +str)
   }
 
-  setPage(event: PageEvent): void{
+  setPage(event: PageEvent): void {
     this.paginationArguments.page = event.pageIndex
     this.paginationArguments.size = event.pageSize
   }

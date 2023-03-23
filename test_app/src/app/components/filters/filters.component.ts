@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
-import { Filter } from 'src/app/shared/models/filter';
-import { FiltersService } from 'src/app/shared/services/filters.service';
+import { Component } from '@angular/core'
+import { Filter } from 'src/app/shared/models/filter'
+import { FiltersService } from 'src/app/shared/services/filters.service'
 
 @Component({
   selector: 'app-filters',

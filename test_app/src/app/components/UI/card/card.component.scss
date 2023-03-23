@@ -2,21 +2,24 @@
 
 $color-card: $gray-0;
 $size: 500px;
+
 .card {
     box-shadow: $shadow-sm;
     border-radius: $radius-md;
     padding: $space-md;
     display: inline-block;
     background: $color-card;
-    
+
     &__photo {
         height: $size;
         width: $size;
         display: block;
         background: $color-background;
     }
+
     &__info {
         margin: $space-sm 0 0;
+
         &__item {
             margin: 0;
             font-size: $font-size-sm;
@@ -24,6 +27,7 @@ $size: 500px;
             color: $color-text;
             width: $size;
             word-break: break-all;
+
             &--main {
                 @extend .card__info__item;
                 font-size: $font-size-md;
