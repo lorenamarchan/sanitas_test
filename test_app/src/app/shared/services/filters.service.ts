@@ -1,8 +1,10 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
 import { Filter }  from '../models/filter';
+
 @Injectable({
   providedIn: 'root'
 })
 export class FiltersService {
-  filterArguments: Filter = { id: '', text: '' }
+  filterArguments = new BehaviorSubject<Filter>({ id: '', text: '' })
 }

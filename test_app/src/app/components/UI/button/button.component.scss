@@ -1,5 +1,8 @@
 @import 'variables.scss';
 
+$color-button: $indigo-50;
+$color-button--hover: $indigo-75;
+
 .button {
     border: none;
     border-radius: $radius-sm;

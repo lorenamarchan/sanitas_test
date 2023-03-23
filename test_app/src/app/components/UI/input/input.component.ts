@@ -12,7 +12,7 @@ export class InputComponent {
   @Output()
   model = new EventEmitter<string>();
 
-  setModel(event: Event){
+  setModel(event: Event): void {
     const target = event.target as any
     this.model.emit(target.value)
   }

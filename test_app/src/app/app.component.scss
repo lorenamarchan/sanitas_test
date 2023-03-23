@@ -8,19 +8,20 @@
     flex-direction: column;
     &__header {
         position: sticky;
-        padding: $space-md;
+        padding: $space-sm;
         border-bottom: $border-sm;
         display: flex;
+        align-items: center;
+        justify-content: space-between;
         flex-direction: column;
         gap: $space-sm;
-        &__pagination {
-            margin: auto;  
+        @media screen and (min-width: $screen-lg){
+            flex-direction: row;
         }
     }
     &__content {
         display: flex;
         flex-direction: column;
-        background: $color-empty-block;
         gap: $space-md;
         align-items: center;
         padding: $space-lg;
@@ -30,4 +31,6 @@
 .virtual-scroll {
     display: flex;
     flex:auto;
+    background: $color-background;
+
 }

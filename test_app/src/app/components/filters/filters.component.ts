@@ -8,15 +8,14 @@ import { FiltersService } from 'src/app/shared/services/filters.service';
   styleUrls: ['./filters.component.scss']
 })
 export class FiltersComponent {
-  constructor(private filtersService: FiltersService) {}
+  constructor(private filtersService: FiltersService) { }
   filterArguments: Filter = {
     id: '',
     text: ''
   }
 
-  applyFilters():void {
-    const {id, text} = this.filterArguments
-    this.filtersService.filterArguments.id = id
-    this.filtersService.filterArguments.text = text
+  applyFilters(): void {
+    const { id, text } = this.filterArguments
+    this.filtersService.filterArguments.next({ id, text })
   }
 }

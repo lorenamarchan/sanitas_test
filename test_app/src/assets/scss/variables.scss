@@ -8,7 +8,7 @@ $gray-100: #000000;
 $indigo-50:#3f51b5;
 $indigo-75: #334299;
 
-$color-empty-block: $gray-25;
+$color-background: $gray-25;
 $color-lines: $gray-50;
 $color-text: $gray-75;
 $color-main-text: $gray-100;
@@ -16,8 +16,7 @@ $color-border: $gray-50;
 $color-border-hover: $gray-100;
 $color-border-focus: $indigo-50;
 $color-shadow: rgba($gray-100, .05);
-$color-button: $indigo-50;
-$color-button--hover: $indigo-75;
+
 
 /* SPACES */
 $space-xs: 0.5em;
@@ -37,6 +36,10 @@ $font-size-xs: .75em;
 $font-size-sm: 1em;
 $font-size-md: 1.4em;
 
-// SHADOW
+/* SHADOWS */
 $shadow-sm: 0 0 1.4em $color-shadow, 0 0 1.4em $color-shadow;
 
+/* BREAK-POINTS */
+$screen-sm: 768px;
+$screen-md: 1024px;
+$screen-lg: 1280px;

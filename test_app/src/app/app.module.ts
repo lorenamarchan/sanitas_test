@@ -16,7 +16,6 @@ import { ButtonComponent } from './components/UI/button/button.component';
 import { FilterPipe } from './shared/pipes/filter.pipe';
 import { PaginationPipe } from './shared/pipes/pagination.pipe';
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,7 +34,7 @@ import { PaginationPipe } from './shared/pipes/pagination.pipe';
     MatChipsModule,
     BrowserAnimationsModule,
   ],
-  providers: [],
+  providers: [FilterPipe, PaginationPipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

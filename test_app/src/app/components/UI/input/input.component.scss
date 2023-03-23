@@ -3,10 +3,14 @@
 .input {
     border: none;
     display: flex;
-    align-items: center;
     flex-wrap: wrap;
     gap: $space-sm;
     padding: 0;
+    flex-direction: column;
+    @media screen and (min-width: $screen-sm){
+        flex-direction: row;
+        align-items: center;
+    }
     &__label {
         color: $gray-75;
         font-size: $font-size-xs;

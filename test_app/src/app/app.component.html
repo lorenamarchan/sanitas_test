@@ -1,13 +1,13 @@
 <main class="main">
   <section class="main__header">
     <app-filters></app-filters>
-    <mat-paginator class="main__header__pagination" [length]="cards.length" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions"
+    <mat-paginator class="main__header__pagination" [length]="filteredCards.length" [pageSize]="pageSizeOptions[pageSizeOptions.length-1]" [pageSizeOptions]="pageSizeOptions"
     (page)="setPage($event)"></mat-paginator>
   </section>
 
   <cdk-virtual-scroll-viewport class="virtual-scroll" itemSize="575">
     <section class="main__content">
-      <app-card *cdkVirtualFor="let card of cards | filter:filterArguments | pagination:paginationArguments; let i = index" [data]="card"></app-card>
+      <app-card *cdkVirtualFor="let card of filteredCards | pagination:paginationArguments; let i = index" [data]="card"></app-card>
     </section>
   </cdk-virtual-scroll-viewport>
 </main>

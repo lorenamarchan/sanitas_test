@@ -1,9 +1,10 @@
 import { ChangeDetectionStrategy, Component, OnInit, ViewChild } from '@angular/core';
 import { generateSlug } from "random-word-slugs";
 import { Card } from './shared/models/card';
+import { Filter } from './shared/models/filter';
 import { FiltersService } from './shared/services/filters.service';
-import { MatPaginator, PageEvent } from '@angular/material/paginator';
-
+import { PageEvent } from '@angular/material/paginator';
+import {FilterPipe}from './shared/pipes/filter.pipe'
 
 @Component({
   selector: 'app-root',
@@ -13,44 +14,55 @@ import { MatPaginator, PageEvent } from '@angular/material/paginator';
 })
 
 export class AppComponent implements OnInit {
-  constructor(private filtersService: FiltersService) {}
-  @ViewChild(MatPaginator) paginator!: MatPaginator;
+  constructor(private filtersService: FiltersService, private filterPipe: FilterPipe) {}
 
   title = 'test_app'
+
   cards: Card[] = []
-  nElements = 4000
+  filteredCards: Card[] = []
+  nCards = 4000
   filterArguments = this.filtersService.filterArguments
   paginationArguments = {
     page: 0,
-    size: this.nElements
+    size: 0
   }
-  // MatPaginator Inputs
-  length = this.nElements;
-  pageSize = this.nElements;
-  pageSizeOptions = [20, 40,125,250, 500, 1000, 2000, 4000];
 
-  // MatPaginator Output
+  // MatPaginator
+  pageSizeOptions = [250, 500, 1000, 2000, 4000];
   pageEvent!: PageEvent;
 
- setPageSizeOptions(setPageSizeOptionsInput: string) {
-   this.pageSizeOptions = setPageSizeOptionsInput.split(',').map(str => +str);
- }
   ngOnInit(){
-    for(let i = 1; i <= this.nElements; i++){
+    for(let i = 1; i <= this.nCards; i++){
       this.cards.push({
           id: i.toString(),
           photo: `https://picsum.photos/id/${i}/500/500`,
-          text: this.randomText('photo_')
+          text: this.setRandomText('photo_')
       })
     }
+
+    this.filterCards(this.filterArguments.value)
+    this.filterArguments.subscribe(filtersArgs => {
+      this.filterCards(filtersArgs)
+    })
   }
 
-  randomText(prefix: string){
+  setRandomText(prefix: string): string {
     return prefix + generateSlug(4, { format: "kebab" }).replace(/-/g, '_')
   }
-  setPage(event: PageEvent){
-    console.log({event})
+
+  setPageSizeOptions(setPageSizeOptionsInput: string):void {
+    this.pageSizeOptions = setPageSizeOptionsInput.split(',').map(str => +str);
+  }
+
+  setPage(event: PageEvent): void{
     this.paginationArguments.page = event.pageIndex
     this.paginationArguments.size = event.pageSize
   }
+
+  filterCards(filtersArguments: Filter): void {
+    this.filteredCards = this.filterPipe.transform(this.cards, filtersArguments)
+    this.paginationArguments.page = 0
+    this.paginationArguments.size = this.filteredCards.length
+  }
+
 }
