@@ -1,10 +1,13 @@
-@import '../../../assets/scss/variables.scss';
+@import 'variables.scss';
 
 .filters {
     display: flex;
     flex-wrap: wrap;
-    gap: $space-md;
-    border-bottom: $border-sm;
-    padding: $space-md 0;
-
+    gap: $space-sm;
+    flex-direction: column;
+    justify-content: center;
+    @media screen and (min-width: 768px) {
+        flex-direction: row;
+        gap: $space-md;
+    }
 }

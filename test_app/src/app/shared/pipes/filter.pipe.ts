@@ -1,6 +1,6 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import { Card } from '../models/card';
-import { Filter } from '../models/filters';
+import { Filter } from '../models/filter';
 @Pipe({
   name: 'filter',
   pure: false,
@@ -14,8 +14,8 @@ export class FilterPipe implements PipeTransform {
     });
   }
 
-  containsText(cardProperty: string, text: string){
-    return text === '' || cardProperty.startsWith(text)
+  containsText(value: string, text: string){
+    return text === '' || value.startsWith(text)
   }
 
 }

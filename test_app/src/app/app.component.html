@@ -1,6 +1,13 @@
-<main>
-  <app-filters></app-filters>
-    <section class="flex">
-      <app-card  *ngFor="let card of cards | filter:filterArguments; let i = index" [data]="card" [priority]="i<10"></app-card>
+<main class="main">
+  <section class="main__header">
+    <app-filters></app-filters>
+    <mat-paginator class="main__header__pagination" [length]="cards.length" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions"
+    (page)="setPage($event)"></mat-paginator>
+  </section>
+
+  <cdk-virtual-scroll-viewport class="virtual-scroll" itemSize="575">
+    <section class="main__content">
+      <app-card *cdkVirtualFor="let card of cards | filter:filterArguments | pagination:paginationArguments; let i = index" [data]="card"></app-card>
     </section>
+  </cdk-virtual-scroll-viewport>
 </main>

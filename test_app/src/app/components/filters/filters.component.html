@@ -1,4 +1,5 @@
 <section class="filters">
-    <app-input class="filters__field" name="id" label="Search by ID" (model)="filtersService.filterArguments.id = $event"></app-input>
-    <app-input class="filters__field" name="text" label="Search by text" (model)="filtersService.filterArguments.text = $event"></app-input>
+    <app-input class="filters__field" name="id" label="Search by ID" (model)="filterArguments.id = $event"></app-input>
+    <app-input class="filters__field" name="text" label="Search by text" (model)="filterArguments.text = $event"></app-input>
+    <app-button label="Search" (click)="applyFilters()"></app-button>
 </section>

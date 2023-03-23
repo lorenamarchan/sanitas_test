@@ -9,6 +9,5 @@ import { Card } from '../../../shared/models/card';
 
 export class CardComponent {
   @Input() data!: Card
-  @Input() priority!: boolean
 
 }

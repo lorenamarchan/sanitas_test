@@ -1,19 +1,33 @@
-@import '../assets/scss/variables.scss';
+@import 'variables.scss';
 
-main {
+.main {
     min-height: 100%;
-    padding: $space-lg;
     font-family: Arial, Helvetica, sans-serif;
     min-width:36em;
-}
-.flex {
     display: flex;
-    padding: $space-lg 0;
-    flex-wrap: wrap;
-    gap: $space-lg;
-    justify-content: center;
-    height: 100%;
+    flex-direction: column;
+    &__header {
+        position: sticky;
+        padding: $space-md;
+        border-bottom: $border-sm;
+        display: flex;
+        flex-direction: column;
+        gap: $space-sm;
+        &__pagination {
+            margin: auto;  
+        }
+    }
+    &__content {
+        display: flex;
+        flex-direction: column;
+        background: $color-empty-block;
+        gap: $space-md;
+        align-items: center;
+        padding: $space-lg;
+    }
 }
+
 .virtual-scroll {
-    height: 100vh;
+    display: flex;
+    flex:auto;
 }
