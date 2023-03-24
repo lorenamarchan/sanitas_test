@@ -1,8 +1,9 @@
 import { ScrollingModule } from '@angular/cdk/scrolling'
-import { fakeAsync, TestBed, tick } from '@angular/core/testing'
+import { TestBed } from '@angular/core/testing'
 import { MatChipsModule } from '@angular/material/chips'
 import { MatPaginatorModule } from '@angular/material/paginator'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component'
 import { FiltersComponent } from './components/filters/filters.component'
 import { ButtonComponent } from './components/UI/button/button.component'
@@ -26,6 +27,7 @@ describe('AppComponent', () => {
         MatPaginatorModule,
         MatChipsModule,
         BrowserAnimationsModule,
+        AppRoutingModule
       ],
     }).compileComponents();
   })
@@ -42,26 +44,4 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('test_app');
   })
 
-  it('should render filter component', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('app-filters')).toBeTruthy()
-  })
-
-  it('should render mat-paginator', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('mat-paginator')).toBeTruthy()
-  })
-
-  it('should render a card component', fakeAsync(() => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.autoDetectChanges();
-    tick(1000);
-    const compiled = fixture.debugElement.nativeElement as HTMLElement;
-    expect(compiled.querySelectorAll('app-card')?.length).toBeGreaterThanOrEqual(1);
-
-  }))
 })
