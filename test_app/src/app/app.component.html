@@ -7,7 +7,14 @@
 
   <cdk-virtual-scroll-viewport class="virtual-scroll" itemSize="575">
     <section class="main__content">
-      <app-card *cdkVirtualFor="let card of filteredCards | pagination:paginationArguments; let i = index" [data]="card"></app-card>
+      <ng-container *ngIf="filteredCards.length; else noItems">
+        <app-card *cdkVirtualFor="let card of filteredCards | pagination:paginationArguments; let i = index" [data]="card"></app-card>
+      </ng-container>
+      <ng-template #noItems>
+        <article class="main__content__no-items">
+          No items found.
+        </article>
+      </ng-template>
     </section>
   </cdk-virtual-scroll-viewport>
 </main>
