@@ -31,7 +31,3 @@ Test page that reproduces:
 ### Deployed Repository
 1. Open a terminal and locate to cloned repository root folder (test_app)
 2. Run command `ng build`
-
-
-However, this repository is integrated with Netlify, so deployment is automated into the following url:
-`https://test-app-lorena-marchan.netlify.app/test_app/dist/`
