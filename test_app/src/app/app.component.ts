@@ -29,15 +29,17 @@ export class AppComponent implements OnInit, OnDestroy {
   cards: Card[] = []
   filteredCards: Card[] = []
   filterArguments: BehaviorSubject<Filter> = this.filtersService.filterArguments
-  paginationArguments: Pagination = {
-    page: 0,
-    size: 0
-  }
+
 
   // MatPaginator
-  pageSizeOptions = [250, 500, 1000, 2000, 4000]
+  pageSizeOptions = [5, 10, 25, 50, 4000]
+  defaultPageSizeOption = this.pageSizeOptions[0]
   pageEvent!: PageEvent
-
+  paginationArguments: Pagination = {
+    page: 0,
+    size: this.defaultPageSizeOption
+  }
+  
   ngOnInit() {
     for (let i = 1; i <= this.nCards; i++) {
       this.cards.push({
@@ -73,7 +75,6 @@ export class AppComponent implements OnInit, OnDestroy {
 
   filterCards(): void {
     this.filteredCards = this.filtersService.filterCards(this.cards)
-    this.paginationArguments.size = this.filteredCards.length
     this.paginator?.firstPage()
   }
 
