@@ -1,0 +1,14 @@
+@import 'variables.scss';
+
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $space-sm;
+    justify-content: center;
+    flex-direction: row;
+    align-items: flex-end;
+
+    @media screen and (min-width: $screen-sm) {
+        gap: $space-md;
+    }
+}

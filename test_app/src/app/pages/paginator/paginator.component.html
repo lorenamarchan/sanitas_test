@@ -1,0 +1,21 @@
+<div id="paginator" class="paginator">
+    <section class="paginator__header">
+        <app-filters></app-filters>
+        <mat-paginator class="paginator__header__pagination" [attr.data-cards-length]="filteredCards.length"
+            [attr.data-page]="paginationArguments.page" [length]="filteredCards.length"
+            [pageSize]="defaultPageSizeOption" [pageSizeOptions]="pageSizeOptions"
+            (page)="setPage($event)"></mat-paginator>
+    </section>
+
+    <section class="paginator__content">
+        <ng-container *ngIf="filteredCards.length; else noItems">
+            <app-card *ngFor="let card of filteredCards | pagination:paginationArguments; let i = index"
+                [data]="card"></app-card>
+        </ng-container>
+        <ng-template #noItems>
+            <article class="paginator__content__no-items">
+                No items found.
+            </article>
+        </ng-template>
+    </section>
+</div>

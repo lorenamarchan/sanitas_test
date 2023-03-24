@@ -1,0 +1,37 @@
+@import 'variables.scss';
+
+.input {
+    border: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: $space-sm;
+    padding: 0;
+    flex-direction: column;
+
+    @media screen and (min-width: $screen-sm) {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    &__label {
+        color: $gray-75;
+        font-size: $font-size-xs;
+    }
+
+    &__field {
+        padding: $space-sm;
+        border-radius: $radius-sm;
+        border: $border-sm;
+        transition: border-color .1s;
+
+        &:hover {
+            border-color: $color-border-hover;
+        }
+
+        &:focus,
+        &:focus-visible {
+            border-color: $color-border-focus;
+            outline: $color-border-focus auto 1px;
+        }
+    }
+}
