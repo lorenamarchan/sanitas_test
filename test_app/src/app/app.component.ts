@@ -4,7 +4,6 @@ import { Card } from './shared/models/card'
 import { Filter } from './shared/models/filter'
 import { FiltersService } from './shared/services/filters.service'
 import { MatPaginator, PageEvent } from '@angular/material/paginator'
-import { FilterPipe } from './shared/pipes/filter.pipe'
 import { Pagination } from './shared/models/pagination'
 import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject'
 
@@ -18,7 +17,7 @@ import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject'
 export class AppComponent implements OnInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
-  constructor(private filtersService: FiltersService, private filterPipe: FilterPipe) { }
+  constructor(private filtersService: FiltersService) { }
   
 
   title = 'test_app'
@@ -46,7 +45,7 @@ export class AppComponent implements OnInit {
     }
 
     this.filterArguments.subscribe(filtersArgs => {
-      this.filterCards(filtersArgs)
+      this.filterCards()
     })
   }
 
@@ -63,8 +62,8 @@ export class AppComponent implements OnInit {
     this.paginationArguments.size = event.pageSize
   }
 
-  filterCards(filtersArguments: Filter): void {
-    this.filteredCards = this.filterPipe.transform(this.cards, filtersArguments)
+  filterCards(): void {
+    this.filteredCards = this.filtersService.filterCards(this.cards)
     this.paginationArguments.size = this.filteredCards.length
     this.paginator?.firstPage()
   }

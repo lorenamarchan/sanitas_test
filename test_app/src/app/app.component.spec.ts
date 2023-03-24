@@ -8,7 +8,6 @@ import { FiltersComponent } from './components/filters/filters.component'
 import { ButtonComponent } from './components/UI/button/button.component'
 import { CardComponent } from './components/UI/card/card.component'
 import { InputComponent } from './components/UI/input/input.component'
-import { FilterPipe } from './shared/pipes/filter.pipe'
 import { PaginationPipe } from './shared/pipes/pagination.pipe'
 
 describe('AppComponent', () => {
@@ -18,7 +17,6 @@ describe('AppComponent', () => {
         AppComponent,
         CardComponent,
         FiltersComponent,
-        FilterPipe,
         InputComponent,
         ButtonComponent,
         PaginationPipe
@@ -29,7 +27,6 @@ describe('AppComponent', () => {
         MatChipsModule,
         BrowserAnimationsModule,
       ],
-      providers: [FilterPipe],
     }).compileComponents();
   })
 

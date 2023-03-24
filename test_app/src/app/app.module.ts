@@ -13,7 +13,6 @@ import { InputComponent } from './components/UI/input/input.component'
 import { FiltersComponent } from './components/filters/filters.component'
 import { ButtonComponent } from './components/UI/button/button.component'
 
-import { FilterPipe } from './shared/pipes/filter.pipe'
 import { PaginationPipe } from './shared/pipes/pagination.pipe'
 
 @NgModule({
@@ -21,7 +20,6 @@ import { PaginationPipe } from './shared/pipes/pagination.pipe'
     AppComponent,
     CardComponent,
     FiltersComponent,
-    FilterPipe,
     InputComponent,
     ButtonComponent,
     PaginationPipe
@@ -34,7 +32,6 @@ import { PaginationPipe } from './shared/pipes/pagination.pipe'
     MatChipsModule,
     BrowserAnimationsModule,
   ],
-  providers: [FilterPipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
