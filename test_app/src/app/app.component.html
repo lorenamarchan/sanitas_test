@@ -1,7 +1,7 @@
 <main class="main">
   <section class="main__header">
     <app-filters></app-filters>
-    <mat-paginator class="main__header__pagination" [length]="filteredCards.length" [pageSize]="pageSizeOptions[pageSizeOptions.length-1]" [pageSizeOptions]="pageSizeOptions"
+    <mat-paginator class="main__header__pagination" [attr.data-cards-length]="filteredCards.length" [attr.data-page]="paginationArguments.page"  [length]="filteredCards.length" [pageSize]="pageSizeOptions[pageSizeOptions.length-1]" [pageSizeOptions]="pageSizeOptions"
     (page)="setPage($event)"></mat-paginator>
   </section>
 

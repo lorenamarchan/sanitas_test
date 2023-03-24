@@ -2,5 +2,5 @@
     <app-input class="filters__field" name="id" label="Search by ID" (model)="filterArguments.id = $event"></app-input>
     <app-input class="filters__field" name="text" label="Search by text"
         (model)="filterArguments.text = $event"></app-input>
-    <app-button label="Search" (click)="applyFilters()"></app-button>
+    <app-button class="filters__button" label="Search" (click)="applyFilters()"></app-button>
 </section>
