@@ -11,12 +11,12 @@ export class FiltersService {
 
   filterCards(cards: Card[]): Card[] {
     return cards.filter(card => {
-      const filterKeys = Object.keys(this.filterArguments)
+      const filterKeys = Object.keys(this.filterArguments.value)
       
       return filterKeys.every(key => {
         const value = card[key]
         const text = this.filterArguments.value[key]
-        this.containsText(value, text)
+        return this.containsText(value, text)
       })
     });
   }
