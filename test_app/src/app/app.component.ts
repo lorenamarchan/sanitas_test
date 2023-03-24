@@ -5,6 +5,8 @@ import { Filter } from './shared/models/filter'
 import { FiltersService } from './shared/services/filters.service'
 import { MatPaginator, PageEvent } from '@angular/material/paginator'
 import { FilterPipe } from './shared/pipes/filter.pipe'
+import { Pagination } from './shared/models/pagination'
+import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject'
 
 @Component({
   selector: 'app-root',
@@ -21,11 +23,11 @@ export class AppComponent implements OnInit {
 
   title = 'test_app'
 
+  nCards = 4000
   cards: Card[] = []
   filteredCards: Card[] = []
-  nCards = 4000
-  filterArguments = this.filtersService.filterArguments
-  paginationArguments = {
+  filterArguments: BehaviorSubject<Filter> = this.filtersService.filterArguments
+  paginationArguments : Pagination = {
     page: 0,
     size: 0
   }
@@ -39,18 +41,17 @@ export class AppComponent implements OnInit {
       this.cards.push({
         id: i.toString(),
         photo: `https://picsum.photos/id/${i}/500/500`,
-        text: this.setRandomText('photo_')
+        text: this.setRandomText(`photo${i}_`)
       })
     }
 
-    this.filterCards(this.filterArguments.value)
     this.filterArguments.subscribe(filtersArgs => {
       this.filterCards(filtersArgs)
     })
   }
 
   setRandomText(prefix: string): string {
-    return prefix + generateSlug(4, { format: "kebab" }).replace(/-/g, '_')
+    return prefix +  generateSlug(4, { format: "kebab" }).replace(/-/g, '_')
   }
 
   setPageSizeOptions(setPageSizeOptionsInput: string): void {
