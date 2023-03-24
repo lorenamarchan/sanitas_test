@@ -13,7 +13,10 @@ import { InputComponent } from './components/UI/input/input.component'
 import { FiltersComponent } from './components/filters/filters.component'
 import { ButtonComponent } from './components/UI/button/button.component'
 
-import { PaginationPipe } from './shared/pipes/pagination.pipe'
+import { PaginationPipe } from './shared/pipes/pagination.pipe';
+import { PaginatorComponent } from './pages/paginator/paginator.component';
+import { ScrollComponent } from './pages/scroll/scroll.component';
+import { AppRoutingModule } from './app-routing.module'
 
 @NgModule({
   declarations: [
@@ -22,7 +25,9 @@ import { PaginationPipe } from './shared/pipes/pagination.pipe'
     FiltersComponent,
     InputComponent,
     ButtonComponent,
-    PaginationPipe
+    PaginationPipe,
+    PaginatorComponent,
+    ScrollComponent
   ],
   imports: [
     BrowserModule,
@@ -31,6 +36,7 @@ import { PaginationPipe } from './shared/pipes/pagination.pipe'
     MatPaginatorModule,
     MatChipsModule,
     BrowserAnimationsModule,
+    AppRoutingModule,
   ],
   bootstrap: [AppComponent]
 })

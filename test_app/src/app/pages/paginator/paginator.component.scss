@@ -1,0 +1,47 @@
+@import 'variables.scss';
+:host {
+    min-height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    min-width:36em;
+    display: flex;
+    flex-direction: column;
+}
+
+.paginator {
+    &__header {
+        position: sticky;
+        padding: $space-sm;
+        border-bottom: $border-sm;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: column;
+        gap: $space-sm;
+
+        @media screen and (min-width: $screen-lg) {
+            flex-direction: row;
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: $space-md;
+        align-items: center;
+        padding: $space-lg;
+
+        &__no-items {
+            padding: $space-lg;
+            font-size: $font-size-md;
+            color: $color-text;
+        }
+    }
+
+
+    .virtual-scroll {
+        display: flex;
+        flex: auto;
+        background: $color-background;
+
+    }
+}
