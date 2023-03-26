@@ -1,6 +1,6 @@
 /* COLORS*/
 $gray-0: #ffffff;
-$gray-25: #f9f9f9;
+$gray-25: #e6e6e6;
 $gray-50: #b0b0b0;
 $gray-75: #2a2a2a;
 $gray-100: #000000;
@@ -16,7 +16,8 @@ $color-border: $gray-50;
 $color-border-hover: $gray-100;
 $color-border-focus: $indigo-50;
 $color-shadow: rgba($gray-100, .05);
-
+$color-link: $gray-50;
+$color-link-active: $gray-100;
 
 /* SPACES */
 $space-xs: 0.5em;

@@ -1,0 +1,17 @@
+@import 'variables.scss';
+
+:host {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+.nav {
+    border-bottom: $border-sm;
+    padding: $space-sm;
+    display: flex;
+    gap: $space-sm;
+    flex-direction: row;
+    @media screen and (min-width: $screen-sm) {
+        gap: $space-md;
+    }
+}

@@ -1,0 +1,19 @@
+@import 'variables.scss';
+
+.nav {
+    padding: $space-sm;
+    display: flex;
+    flex-wrap: wrap;
+    gap: $space-sm;
+    background: $color-background;
+    &__item--active {
+        ::ng-deep {
+            .link {
+                font-weight: 600;
+                color: $color-link-active;
+                cursor: default;
+            }
+        }
+    }
+
+}
