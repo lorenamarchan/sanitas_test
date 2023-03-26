@@ -1,5 +1,10 @@
 <article class="card">
-    <img class="card__photo" width="500" height="500" [alt]="data.text" [src]="data.photo" />
+    <ng-container *ngIf="imgOptimization; else regular">
+        <img class="card__photo" width="500" height="500" [alt]="data.text" [ngSrc]="data.photo"  [priority]=" data.id < 2" />
+    </ng-container>
+    <ng-template #regular>
+        <img class="card__photo" [alt]="data.text" [src]="data.photo" />
+    </ng-template>
     <div class="card__info">
         <p class="card__info__item" role="card-id">#{{data.id}}</p>
         <p class="card__info__item--main" role="card-text">{{data.text}}</p>

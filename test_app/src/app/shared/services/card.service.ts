@@ -7,20 +7,23 @@ import { Card } from '../models/card';
 })
 export class CardService {
 
-  constructor() { }
+  constructor() { 
+    this.generateCards()
+  }
+
 
   private nCards = 4000
+  public cards: Card[] = []
 
-  public generateCards(): Card[] {
-    const cards = []
+  public generateCards(): void {
+    this.cards = []
     for (let i = 1; i <= this.nCards; i++) {
-      cards.push({
-        id: i.toString(),
+      this.cards.push({
+        id: i,
         photo: `https://picsum.photos/id/${i}/500/500`,
         text: this.setRandomText(`photo${i}_`)
       })
     }
-    return cards
   }
 
   public setRandomText(prefix: string): string {

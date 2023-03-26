@@ -1,6 +1,6 @@
 export interface Card {
-    [key: string]: string,
-    id: string,
+    [key: string]: string | number,
+    id: number,
     photo: string,
     text: string
 }

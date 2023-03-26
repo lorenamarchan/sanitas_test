@@ -16,7 +16,7 @@ export class FiltersService {
       return filterKeys.every(key => {
         const value = card[key]
         const text = this.filterArguments.value[key]
-        return this.containsText(value, text)
+        return this.containsText(value.toString(), text)
       })
     });
   }
