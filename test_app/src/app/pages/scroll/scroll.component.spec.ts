@@ -9,7 +9,7 @@ import { ButtonComponent } from '../../components/UI/button/button.component'
 import { CardComponent } from '../../components/UI/card/card.component'
 import { InputComponent } from '../../components/UI/input/input.component'
 
-describe('AppComponent', () => {
+describe('ScrollComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [
@@ -26,7 +26,7 @@ describe('AppComponent', () => {
     }).compileComponents();
   })
 
-  it('should create the app', () => {
+  it('should be created the app', () => {
     const fixture = TestBed.createComponent(ScrollComponent);
     const app = fixture.componentInstance;
     expect(app).toBeTruthy();

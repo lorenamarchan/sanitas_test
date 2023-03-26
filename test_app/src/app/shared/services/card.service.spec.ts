@@ -14,9 +14,8 @@ describe('CardService', () => {
     expect(service).toBeTruthy();
   });
 
-  it('should generate 4000 cards', () => {	
-    const cards = service.generateCards()
-    expect(cards.length).toEqual(4000)	
+  it('should initialize Card object with 4000 cards', () => {	
+    expect(service.cards.length).toEqual(4000)	
   })	
 
 });
