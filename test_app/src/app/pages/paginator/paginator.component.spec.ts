@@ -8,6 +8,7 @@ import { ButtonComponent } from '../../components/UI/button/button.component'
 import { CardComponent } from '../../components/UI/card/card.component'
 import { InputComponent } from '../../components/UI/input/input.component'
 import { PaginationPipe } from '../../shared/pipes/pagination.pipe'
+import { NgOptimizedImage } from '@angular/common'
 
 describe('PaginatorComponent', () => {
   beforeEach(async () => {
@@ -24,6 +25,7 @@ describe('PaginatorComponent', () => {
         MatPaginatorModule,
         MatChipsModule,
         BrowserAnimationsModule,
+        NgOptimizedImage,
       ],
     }).compileComponents();
   })

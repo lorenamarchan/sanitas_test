@@ -1,6 +1,6 @@
 <article class="card">
     <ng-container *ngIf="imgOptimization; else regular">
-        <img class="card__photo" width="500" height="500" [alt]="data.text" [attr.ngSrc]="data.photo" [attr.priority]=" data.id < 2" />
+        <img class="card__photo" width="500" height="500" [alt]="data.text" [ngSrc]="data.photo" [priority]=" data.id < 2" />
     </ng-container>
     <ng-template #regular>
         <img class="card__photo" [alt]="data.text" [src]="data.photo" />
