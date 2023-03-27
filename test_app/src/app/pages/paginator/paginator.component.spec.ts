@@ -8,8 +8,9 @@ import { ButtonComponent } from '../../components/UI/button/button.component'
 import { CardComponent } from '../../components/UI/card/card.component'
 import { InputComponent } from '../../components/UI/input/input.component'
 import { PaginationPipe } from '../../shared/pipes/pagination.pipe'
+import { NgOptimizedImage } from '@angular/common'
 
-describe('AppComponent', () => {
+describe('PaginatorComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [
@@ -24,11 +25,12 @@ describe('AppComponent', () => {
         MatPaginatorModule,
         MatChipsModule,
         BrowserAnimationsModule,
+        NgOptimizedImage,
       ],
     }).compileComponents();
   })
 
-  it('should create the app', () => {
+  it('should be created the app', () => {
     const fixture = TestBed.createComponent(PaginatorComponent);
     const app = fixture.componentInstance;
     expect(app).toBeTruthy();
@@ -49,12 +51,11 @@ describe('AppComponent', () => {
     expect(compiled.querySelector('mat-paginator')).toBeTruthy()
   })
 
-  it('should render a card component', fakeAsync(() => {
+  it('should render 5 card components', fakeAsync(() => {
     const fixture = TestBed.createComponent(PaginatorComponent);
     fixture.autoDetectChanges();
-    tick(1000);
     const compiled = fixture.debugElement.nativeElement as HTMLElement;
-    expect(compiled.querySelectorAll('app-card')?.length).toBeGreaterThanOrEqual(1);
+    expect(compiled.querySelectorAll('app-card')?.length).toBe(5);
 
   }))
 })

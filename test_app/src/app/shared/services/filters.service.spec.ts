@@ -4,8 +4,8 @@ import { FiltersService } from './filters.service'
 
 //mock data	
 const cards = [	
-  { id: '1', photo: '', text: 'random_text_1' },	
-  { id: '2', photo: '', text: 'random_text_2' },	
+  { id: 1, photo: '', text: 'random_text_1' },	
+  { id: 2, photo: '', text: 'random_text_2' },	
 ]
 describe('FiltersService', () => {
   let service: FiltersService
@@ -19,7 +19,7 @@ describe('FiltersService', () => {
     expect(service).toBeTruthy()
   })
 
-  it('should filter cards by text', () => {	
+  it('should filter cards by id', () => {	
     service.filterArguments.next({ id: '1', text: '' })
     const filteredCards = service.filterCards(cards)	
     expect(filteredCards).toEqual([cards[0]])	

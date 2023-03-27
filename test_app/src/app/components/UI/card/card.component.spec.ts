@@ -21,14 +21,14 @@ describe('CardComponent', () => {
     component = fixture.componentInstance
     // mock data
     component.data = {
-      id: '1',
+      id: 1,
       photo: 'https://picsum.photos/id/1/500/500',
       text: 'mushy_howling_adorable_plumber'
     }
     fixture.detectChanges()
   })
 
-  it('should create', () => {
+  it('should be created', () => {
     expect(component).toBeTruthy()
   })
 

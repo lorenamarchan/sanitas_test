@@ -16,7 +16,10 @@ import { ButtonComponent } from './components/UI/button/button.component'
 import { PaginationPipe } from './shared/pipes/pagination.pipe';
 import { PaginatorComponent } from './pages/paginator/paginator.component';
 import { ScrollComponent } from './pages/scroll/scroll.component';
-import { AppRoutingModule } from './app-routing.module'
+import { AppRoutingModule } from './app-routing.module';
+import { NavComponent } from './components/nav/nav.component'
+import { NgOptimizedImage } from '@angular/common';
+import { LinkComponent } from './components/UI/link/link.component'
 
 @NgModule({
   declarations: [
@@ -27,7 +30,9 @@ import { AppRoutingModule } from './app-routing.module'
     ButtonComponent,
     PaginationPipe,
     PaginatorComponent,
-    ScrollComponent
+    ScrollComponent,
+    NavComponent,
+    LinkComponent
   ],
   imports: [
     BrowserModule,
@@ -37,6 +42,7 @@ import { AppRoutingModule } from './app-routing.module'
     MatChipsModule,
     BrowserAnimationsModule,
     AppRoutingModule,
+    NgOptimizedImage
   ],
   bootstrap: [AppComponent]
 })

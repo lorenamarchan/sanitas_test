@@ -25,7 +25,7 @@ export class PaginatorComponent implements OnInit, OnDestroy {
 
   private unsubscribe$: Subject<void> = new Subject<void>();
 
-  private cards: Card[] = this.cardService.generateCards()
+  private cards: Card[] = this.cardService.cards
   private filterArguments: BehaviorSubject<Filter> = this.filtersService.filterArguments
 
 
