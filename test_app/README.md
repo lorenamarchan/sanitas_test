@@ -1,27 +1,47 @@
-# TestApp
+# Test_app
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.4.
+Test page that reproduces:
 
-## Development server
+- optimal rendering for 4000 image card components with scroll
+- filtering the cards by ID, text
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+---
 
-## Code scaffolding
+This project has 2 pages with 2 different apporaches:
+- `http://localhost:4200/paginator`:
+   - offers a page with a pagination for the list elements, as a way of lighten the render of the list.
+- `http://localhost:4200/scroll`:
+  - offers a page with all list element on sight, with a virtual scroll to optimize the performance.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+----
 
-## Build
+### Serving the project
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+1. Open a terminal and clone the repository `git clone git@github.com:lorenamarchan/sanitas_test.git` 
+2. Locate to cloned repository root folder (test_app)
+3. Run command `ng serve`
+4. Go to `http://localhost:4200/paginator` to check pagination approach
+5. Go to `http://localhost:4200/scroll` to check scroll approach
 
-## Running unit tests
+----
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Unit testing 
+1. Open a terminal and locate to cloned repository root folder (test_app)
+2. Run command `ng test`
 
-## Running end-to-end tests
+----
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### E2E testing
+1. Open a terminal and locate to cloned repository root folder (test_app)
+2. Run command `ng e2e`
 
-## Further help
+----
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### Deployed Repository
+1. Open a terminal and locate to cloned repository root folder (test_app)
+2. Run command `ng build`
+
+----
+
+You can preview the build result here:
+[https://test-app-lorena-marchan.netlify.app/test_app/dist](https://test-app-lorena-marchan.netlify.app/test_app/dist)
