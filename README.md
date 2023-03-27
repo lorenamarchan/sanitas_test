@@ -40,3 +40,8 @@ This project has 2 pages with 2 different apporaches:
 ### Deployed Repository
 1. Open a terminal and locate to cloned repository root folder (test_app)
 2. Run command `ng build`
+
+----
+
+You can preview the build result here:
+[https://test-app-lorena-marchan.netlify.app/test_app/dist](https://test-app-lorena-marchan.netlify.app/test_app/dist)
